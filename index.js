@@ -1,11 +1,11 @@
 import React from 'react';
-import { Animated } from 'react-native';
+import { Animated, Text } from 'react-native';
 
-const LoadingSwitch = (props) => {
+const loadswitch = (props) => {
 
     <Animated.View>
-
+        <Text>Hello from loading switch</Text>
     </Animated.View>
 }
 
-export default LoadingSwitch;
+module.exports.loadswitch = loadswitch;
