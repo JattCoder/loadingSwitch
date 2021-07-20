@@ -3,7 +3,6 @@ import { Animated } from 'react-native';
 
 const LoadingSwitch = (props) => {
 
-
     <Animated.View>
 
     </Animated.View>
