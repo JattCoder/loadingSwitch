@@ -99,7 +99,7 @@ const LoadSwitch = (props) => {
     }
 
     const handlePress = () => {
-        if (onPress()) {
+        if (onPress) {
             onPress(!prevStatus.current);
         } else {
             alert('Please add onPress() prop');
