@@ -7,6 +7,7 @@ import { Animated, StyleSheet, TouchableOpacity, ActivityIndicator } from 'react
 
 const LoadSwitch = (props) => {
 
+    const { onPress } = props;
     const attr = {
       toggleOnColor: props.toggleOnColor ? props.toggleOnColor : 'white',
       toggleOffColor: props.toggleOffColor ? props.toggleOffColor : 'blue',
@@ -98,10 +99,10 @@ const LoadSwitch = (props) => {
     }
 
     const handlePress = () => {
-        if (props.onPress()) {
-            props.onPress()
+        if (onPress()) {
+            onPress(!prevStatus.current);
         } else {
-            alert('Please add onPress() prop')
+            alert('Please add onPress() prop');
         }
     }
 
