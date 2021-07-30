@@ -1,7 +1,7 @@
 {
   "name": "loadingswitch",
-  "version": "1.0.3",
-  "description": "Shows loading on press before switch changes it's position. ",
+  "version": "1.0.4",
+  "description": "Animated Switch",
   "main": "index.js",
   "scripts": {
     "test": "run loadingswitch"
@@ -12,5 +12,9 @@
     "react": "^17.0.1",
     "react-native": "^0.64.2",
     "react-native-responsive-screen": "^1.4.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/your-user/repo-url.git"
   }
 }

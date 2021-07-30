@@ -8,14 +8,13 @@ import { Animated, StyleSheet, TouchableOpacity, ActivityIndicator } from 'react
 const LoadSwitch = (props) => {
 
     const attr = {
-      toggleOnColor: props.togglOnColor ? props.togglOnColor : 'white',
+      toggleOnColor: props.toggleOnColor ? props.toggleOnColor : 'white',
       toggleOffColor: props.toggleOffColor ? props.toggleOffColor : 'blue',
       switchOnColor: props.switchOnColor ? props.switchOnColor : 'blue',
       switchOffColor: props.switchOffColor ? props.switchOffColor : 'white',
       switchBorderColor: props.switchBorderColor ? props.switchBorderColor : 'black',
       shape: props.shape ? props.shape == 'Box' ? 0 : 100 : 100,
     }
-
     const [toggleColor] = useState(new Animated.Value(0));
     const [toggleWidth] = useState(new Animated.Value(0));
     const [togglePosition] = useState(new Animated.Value(wp(0.5)));
@@ -98,6 +97,14 @@ const LoadSwitch = (props) => {
       }
     }
 
+    const handlePress = () => {
+        if (props.onPress()) {
+            props.onPress()
+        } else {
+            alert('Please add onPress() prop')
+        }
+    }
+
     const toggleColorInterpolate = toggleColor.interpolate({
       inputRange: [0, 1],
       outputRange: [attr.toggleOffColor, attr.toggleOnColor]
@@ -121,7 +128,7 @@ const LoadSwitch = (props) => {
 
     return (
         <Animated.View style={[styles.switchFrame,{backgroundColor: switchColorInterpolate, borderColor: attr.switchBorderColor, borderRadius: attr.shape}]}>
-            <TouchableOpacity style={styles.buttonFrame} activeOpacity={1} onPress={()=>props.onPress()}>
+            <TouchableOpacity style={styles.buttonFrame} activeOpacity={1} onPress={()=>handlePress()}>
                 <Animated.View style={[styles.toggleFrame, {
                     width: toggleWidthInterpolate,
                     left: togglePosition,
