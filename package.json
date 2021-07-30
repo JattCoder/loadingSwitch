@@ -1,6 +1,6 @@
 {
   "name": "loadingswitch",
-  "version": "1.0.0",
+  "version": "1.0.3",
   "description": "Shows loading on press before switch changes it's position. ",
   "main": "index.js",
   "scripts": {
